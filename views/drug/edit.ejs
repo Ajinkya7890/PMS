@@ -1,0 +1,7 @@
+<h1>Edit Drug</h1>
+<form action="/drug/edit/<%= drug.drug_id %>" method="POST">
+  <label>Name:</label>
+  <input type="text" name="name" value="<%= drug.name %>" required><br>
+  <button type="submit">Update</button>
+</form>
+<a href="/drug">Back</a>

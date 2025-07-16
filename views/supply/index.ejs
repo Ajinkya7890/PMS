@@ -1,0 +1,44 @@
+<!-- Supply Page -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Supply</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+
+<div class="container py-4">
+  <div class="d-flex justify-content-between align-items-center mb-4">
+    <h1 class="mb-0">Supply</h1>
+    <a href="/supply/new" class="btn btn-primary">Add New Supply</a>
+  </div>
+
+  <div class="table-responsive">
+    <table class="table table-bordered table-striped table-hover">
+      <thead class="table-dark">
+        <tr>
+          <th>Supplier</th>
+          <th>Drug</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% supply.forEach(item => { %>
+          <tr>
+            <td><%= item.supplier_name %></td>
+            <td><%= item.drug_name %></td>
+            <td>
+              <form action="/supply/delete/<%= item.supplier_id %>/<%= item.drug_id %>" method="POST" class="d-inline">
+                <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Are you sure?')">Delete</button>
+              </form>
+            </td>
+          </tr>
+        <% }) %>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+</body>
+</html>

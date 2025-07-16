@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Add New Order</title>
+</head>
+<body>
+  <h1>Add New Order</h1>
+
+  <form action="/order/new" method="POST">
+    <label for="quantity">Quantity:</label>
+    <input type="number" name="quantity" required />
+
+    <label for="drug_id">Select Drug:</label>
+    <select name="drug_id" required>
+      <% drugs.forEach(drug => { %>
+        <option value="<%= drug.drug_id %>"><%= drug.name %></option>
+      <% }); %>
+    </select>
+
+    <button type="submit">Add Order</button>
+  </form>
+
+  <a href="/order">Back to Orders</a>
+</body>
+</html>

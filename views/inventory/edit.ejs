@@ -1,0 +1,16 @@
+<h1>Edit Inventory</h1>
+<form action="/inventory/edit/<%= inventory.inventory_id %>" method="POST">
+  <label>Drug:</label>
+  <select name="drug_id" required>
+    <% drugs.forEach(drug => { %>
+      <option value="<%= drug.drug_id %>" <%= drug.drug_id === inventory.drug_id ? "selected" : "" %>><%= drug.name %></option>
+    <% }) %>
+  </select><br>
+  <label>Quantity:</label>
+  <input type="number" name="quantity" value="<%= inventory.quantity %>" required><br>
+  <label>Expiry Date:</label>
+  <input type="date" name="expiry_date" value="<%= inventory.expiry_date ? inventory.expiry_date.toISOString().split('T')[0] : '' %>" required><br>
+
+  <button type="submit">Update</button>
+</form>
+<a href="/inventory">Back</a>

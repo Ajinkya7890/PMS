@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Edit Order</title>
+</head>
+<body>
+  <h1>Edit Order ID: <%= order.order_id %></h1>
+
+  <form action="/order/edit/<%= order.order_id %>" method="POST">
+    <label for="quantity">Quantity:</label>
+    <input type="number" name="quantity" value="<%= order.quantity %>" required />
+
+    <label for="drug_id">Drug ID:</label>
+    <input type="number" name="drug_id" value="<%= order.drug_id %>" required />
+
+    <button type="submit">Update Order</button>
+  </form>
+
+  <a href="/order">Back to Orders</a>
+</body>
+</html>

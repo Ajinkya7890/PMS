@@ -1,0 +1,15 @@
+<h1>Add Inventory</h1>
+<form action="/inventory/new" method="POST">
+  <label>Drug:</label>
+  <select name="drug_id" required>
+    <% drugs.forEach(drug => { %>
+      <option value="<%= drug.drug_id %>"><%= drug.name %></option>
+    <% }) %>
+  </select><br>
+  <label>Quantity:</label>
+  <input type="number" name="quantity" required><br>
+  <label>Expiry Date:</label>
+  <input type="date" name="expiry_date" required><br>
+  <button type="submit">Add</button>
+</form>
+<a href="/inventory">Back</a>

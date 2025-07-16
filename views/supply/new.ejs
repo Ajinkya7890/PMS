@@ -1,0 +1,19 @@
+<h1>Add Supply</h1>
+<form action="/supply/new" method="POST">
+  <label>Supplier:</label>
+  <select name="supplier_id" required>
+    <% suppliers.forEach(supplier => { %>
+      <option value="<%= supplier.supplier_id %>"><%= supplier.name %></option>
+    <% }) %>
+  </select><br>
+  
+  <label>Drug:</label>
+  <select name="drug_id" required>
+    <% drugs.forEach(drug => { %>
+      <option value="<%= drug.drug_id %>"><%= drug.name %></option>
+    <% }) %>
+  </select><br>
+  
+  <button type="submit">Add</button>
+</form>
+<a href="/supply">Back</a>

@@ -1,0 +1,4 @@
+host: "localhost",
+  user: "root", // change this to your MySQL username
+  password: "NORDOP777", // change this to your MySQL password
+  database: "pharmacydb2"
